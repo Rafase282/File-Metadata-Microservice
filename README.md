@@ -21,6 +21,10 @@ https://file-metadata-r282.herokuapp.com
 
 ## Example query output:
 
+```text
+https://file-metadata-r282.herokuapp.com/upload
+```
+
 ```js
 {
 "name": "2016-01-26.png",
