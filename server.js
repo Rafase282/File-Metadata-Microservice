@@ -7,11 +7,10 @@ var Schema = mongoose.Schema;
 var routes = require('./app/routes/index.js');
 var api = require('./app/api/file-meta.js');
 var log = require('npmlog');
-var multer  = require('multer');
-var upload = multer({ dest: 'uploads/' });
 require('dotenv').config({
   silent: true
 });
+
 var app = express();
 
 var fileSchema = new Schema({
@@ -30,7 +29,7 @@ mongoose.connect(mongouri);
   app.set('view engine', 'jade');
 
   routes(app);
-  api(app, upload, File);
+  api(app, File);
 
   var port = process.env.PORT || 8080;
   app.listen(port, function() {

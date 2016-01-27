@@ -30,5 +30,10 @@ block content
         li I can submit a FormData object that includes a file upload.
         li When I submit something, I will receive the file size in bytes within the JSON response.
         li Hint: You may want to use this package:
-           a(href="https://www.npmjs.com/package/multer" target=_blank)  Multer
-        
+           a(href="https://www.npmjs.com/package/multer" target='_blank')  Multer
+    h2 Upload file
+    form(role="form", action="/upload", method="post", enctype="multipart/form-data")
+        div(class="form-group")
+            label Upload File
+            input(type="file", name="userFile", id="myfile")
+            input(type='submit', name='send', id='sendFile')
