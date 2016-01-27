@@ -1,5 +1,6 @@
 'use strict';
 var log = require('npmlog');
+var fs = require('fs');
 var multer = require('multer');
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -45,6 +46,8 @@ module.exports = function(app, File) {
         }
         log.info('Saved', file);
       });
+      var filePath = "uploads/" + req.file.filename; 
+      fs.unlinkSync(filePath);
       res.send(fileDetails);
     });
   });
